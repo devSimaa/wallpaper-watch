@@ -29,7 +29,7 @@ f"""
 'year': {current_datetime.year}
 'mounth': {current_datetime.month}
 'today': {current_datetime.day}
-'hour': {current_datetime.hour}:{(current_datetime.minute).zfill(2)}
+'hour': {current_datetime.hour}:{(current_datetime.minute)}
 
 """,
                 font=font,
@@ -54,5 +54,4 @@ if __name__ == "__main__":
 
     while True:
         schedule.run_pending()
-        time.sleep()
-
+        time.sleep(1)
