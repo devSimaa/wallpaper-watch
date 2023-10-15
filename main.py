@@ -13,7 +13,7 @@ def create_wallpaper():
     with open(rf"{path}\config.json", 'r') as json_file:
         config = json.load(json_file)
     
-    image = Image.open("wallpaper\input.png")
+    image = Image.open(f"wallpaper\{config['photo-name']}")
     width, height = image.size
     width, height = (width / 2, height / 2)
 
@@ -29,7 +29,7 @@ f"""
 'year': {current_datetime.year}
 'mounth': {current_datetime.month}
 'today': {current_datetime.day}
-'hour': {current_datetime.hour}:{current_datetime.minute}
+'hour': {current_datetime.hour}:{(current_datetime.minute).zfill(2)}
 
 """,
                 font=font,
@@ -54,5 +54,5 @@ if __name__ == "__main__":
 
     while True:
         schedule.run_pending()
-        time.sleep(1)
+        time.sleep()
 
