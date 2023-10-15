@@ -51,7 +51,7 @@ if __name__ == "__main__":
     import schedule
     import time
     schedule.every().minutes.do(set_wallpaper)
-
+    set_wallpaper()
     while True:
         schedule.run_pending()
         time.sleep(1)
